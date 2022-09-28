@@ -1,17 +1,19 @@
 #include <stdio.h>
 /**
- * main -Entry pointi
+ * main -Entry point
+ *
  *
  * Return: Always 0
  */
+
 int main(void)
 {
-	char alp = 'a';
+	int num = 0;
 
-	while (alp <= 'z')
+	while (num < 10)
 	{
-		putchar(alp);
-		alp++;
+		printf("%d", num);
+		num++;
 	}
 
 	putchar('\n');
