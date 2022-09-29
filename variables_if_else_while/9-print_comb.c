@@ -16,14 +16,9 @@ int main(void)
 		if (i != 57)
 		{
 			putchar(',');
+			putchar(' ');
 		}
 
-		putchar(' ');
-
-		if (i == '9')
-		{
-			putchar('\n');
-		}
 		i++;
 	}
 	return (0);
