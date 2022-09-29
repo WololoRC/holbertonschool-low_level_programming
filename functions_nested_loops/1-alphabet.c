@@ -20,5 +20,5 @@ int main(void)
 		_putchar(nw);
 		alp++;
 	}
-	return (void);
+	return (0);
 }
