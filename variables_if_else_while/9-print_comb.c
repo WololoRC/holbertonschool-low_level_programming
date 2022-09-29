@@ -19,6 +19,11 @@ int main(void)
 			putchar(' ');
 		}
 
+		if (i == 57)
+		{
+			putchar('\n');
+		}
+
 		i++;
 	}
 	return (0);
