@@ -8,20 +8,21 @@
 int main(void)
 {
 	char i = '0';
+	int cnt;
+
+
 
 	while (i <= '9')
 	{
 		putchar(i);
+		if (i == '9')
+		{
+			putchar('\n');
+		}
+
 		putchar(',');
 		putchar(' ');
 		i++;
-
-		while (i == '9')
-		{
-			putchar('9');
-			putchar('\n');
-			i++;
-		}
 	}
 
 
