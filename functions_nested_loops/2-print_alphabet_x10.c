@@ -7,19 +7,19 @@
  */
 void print_alphabet(void)
 {
-        int alp;
-        int nw;
+	int alp;
+	int nw;
 
-        nw = '\n';
-        alp = 97;
+	nw = '\n';
+	alp = 97;
 
-        while (alp <= 122)
-        {
-                _putchar(alp);
-                alp++;
+	while (alp <= 122)
+	{
+		_putchar(alp);
+		alp++;
 
-        }
-        _putchar(nw);
+	}
+	_putchar(nw);
 }
 /**
  *print_alphabet_x10 -Entry point
