@@ -1,11 +1,17 @@
 #include "main.h"
-
+/**
+ *print_diagonal -IDK
+ *
+ *@n: lenght of diagonal
+ *
+ *
+ */
 void print_diagonal(int n)
 {
 	if (n <= 0)
 
-		_putchar('\n');	
-		
+		_putchar('\n');
+
 	for (int i = 0; i < n; i++)
 	{
 		for (int x = 0; x <= i; x++)
@@ -14,9 +20,9 @@ void print_diagonal(int n)
 			{
 				_putchar(92);
 				_putchar('\n');
-			} 
+			}
 
-			else 
+			else
 			{
 				_putchar(' ');
 			}
