@@ -8,13 +8,15 @@
  */
 void print_diagonal(int n)
 {
+	int i, x;
+
 	if (n <= 0)
 
 		_putchar('\n');
 
-	for (int i = 0; i < n; i++)
+	for (i = 0; i < n; i++)
 	{
-		for (int x = 0; x <= i; x++)
+		for (x = 0; x <= i; x++)
 		{
 			if (x == i)
 			{
