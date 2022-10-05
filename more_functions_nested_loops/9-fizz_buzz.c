@@ -1,4 +1,10 @@
 #include <stdio.h>
+/**
+ *main -FizzBuzz
+ *
+ *
+ *Return: Always 0
+ */
 void main(void)
 {
 	int x = 0;
@@ -8,7 +14,7 @@ void main(void)
 		if (((x % 3) == 0) && ((x % 5) == 0))
 		{
 			printf("FizzBuzz ");
-		}		
+		}
 
 		else if ((x % 3) == 0)
 		{
@@ -19,12 +25,14 @@ void main(void)
 		{
 			printf("Buzz ");
 		}
-		
+
 		else
-			printf("%d ",x);
+			printf("%d ", x);
 
 		if (x == 100)
 			printf("\n");
-		
+
 	}
+
+	return (0);
 }
