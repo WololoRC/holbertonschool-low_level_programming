@@ -1,3 +1,4 @@
+
 #include "main.h"
 /**
  *puts2 -print str sorted by 2
@@ -13,10 +14,14 @@ void puts2(char *str)
 	lmt = 0;
 
 
-	while (str[lmt] > '\0')
+	for (; str[lmt] != '\0'; lmt++)
 	{
-		_putchar(str[lmt]);
-		lmt += 2;
+		if ((lmt % 2) == 0)
+		{
+			_putchar(str[lmt]);
+		}
+		else
+			continue;
 	}
 
 	_putchar('\n');
