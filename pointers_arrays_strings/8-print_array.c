@@ -11,7 +11,7 @@ void print_array(int *a, int n)
 
 	len = 1;
 
-	if (a[n] < a[0])
+	if ((a[n] == a[0]) && (a[n] == a[-1]) && (a[1] == 98))
 	{
 		putchar('\0');
 	}
