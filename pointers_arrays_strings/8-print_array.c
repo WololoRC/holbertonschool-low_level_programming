@@ -9,17 +9,15 @@ void print_array(int *a, int n)
 {
 	int len;
 
-	len = 0;
+	len = 1;
 
-	if (a[n] <= a[len])
+	if (a[n] < a[len])
 	{
 		putchar('\0');
 	}
 
 	else
 	{
-		len = 1;
-
 		printf("%d", a[0]);
 
 		for (; a[len] < a[n]; len++)
