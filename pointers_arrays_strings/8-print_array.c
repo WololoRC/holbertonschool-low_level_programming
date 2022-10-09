@@ -13,7 +13,7 @@ void print_array(int *a, int n)
 
 	if (a[n] < a[len])
 	{
-		putchar('\0');
+		putchar('\n');
 	}
 
 	else
