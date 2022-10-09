@@ -11,7 +11,7 @@ void print_array(int *a, int n)
 
 	len = 1;
 
-	if (a[n] < a[len])
+	if (a[n] < a[0])
 	{
 		putchar('\0');
 	}
