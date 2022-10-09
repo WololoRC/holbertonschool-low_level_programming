@@ -9,9 +9,15 @@ void print_array(int *a, int n)
 {
 	int len;
 
-	if (n > 1)
-	{
+	len = 0;
 
+	if (a[n] <= a[len])
+	{
+		putchar('\0');
+	}
+
+	else
+	{
 		len = 1;
 
 		printf("%d", a[0]);
@@ -23,11 +29,5 @@ void print_array(int *a, int n)
 			printf("%d", a[len]);
 		}
 	}
-
-	else
-	{
-		putchar('\0');
-	}
-
 	putchar('\n');
 }
