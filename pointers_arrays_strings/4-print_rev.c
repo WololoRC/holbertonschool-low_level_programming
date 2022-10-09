@@ -18,7 +18,7 @@ void print_rev(char *s)
 
 	lmt = lmt - 1;
 
-	for (;lmt >= 0; lmt--)
+	for (; lmt >= 0; lmt--)
 	{
 		_putchar(s[lmt]);
 	}
