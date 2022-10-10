@@ -1,18 +1,13 @@
-/**
- *_strlen -counts chat bytes
- *
- *@s: pointer
- *Return: cnt
- */
 int _strlen(char *s)
 {
-	int cnt = 0;
+	int len;
 
-	while (*s != '\0')
+	len = 0;
+
+	while (s[len] != '\0')
 	{
-		cnt++;
-		s++;
+		len++;
 	}
 
-	return (cnt);
+	return (len);
 }
