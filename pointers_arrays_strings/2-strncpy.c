@@ -13,16 +13,23 @@ char *_strncpy(char *dest, char *src, int n)
 	len = 0;
 
 
-	for (;len < n && src[n] != '\0'; len++)
+	for (; len < n && src[n] != '\0'; len++)
 	{
 		dest[len] = src[len];
 	}
 
-	for (;len < n; len++)
+	if (n < len)
 	{
-		dest[len] = '\0';
+		for (; len < n; len++)
+		{
+			dest[len] = '\0';
+		}
 	}
 
+	else if ((n > len) && (len != 0))
+	{
+
+	}
 
 	return (dest);
 }
