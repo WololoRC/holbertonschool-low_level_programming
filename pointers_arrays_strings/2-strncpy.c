@@ -9,7 +9,6 @@
 char *_strncpy(char *dest, char *src, int n)
 {
 	int len;
-	char cpy;
 
 	len = 0;
 
