@@ -1,3 +1,9 @@
+/**
+ *string_toupper -uppercase a string
+ *
+ *@str: pointer to string
+ * Return: str
+ */
 char *string_toupper(char *str)
 {
 	int len;
