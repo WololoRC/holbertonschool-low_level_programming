@@ -1,3 +1,4 @@
+#include <stddef.h>
 /**
  **_strchr - moves *s until find c
  *
@@ -8,9 +9,14 @@
  */
 char *_strchr(char *s, char c)
 {
-	while (*s != c && *s != '\0')
+	while (*s != c && *s == '\0')
 	{
 		s++;
+	}
+
+	if (*s != c)
+	{
+		return (0);
 	}
 
 	return (s);
