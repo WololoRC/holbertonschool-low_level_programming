@@ -1,4 +1,5 @@
 #include <stdlib.h>
+#include "main.h"
 /**
  **str_concat -Return concatenated strings allocated in a new space of memory
  *
