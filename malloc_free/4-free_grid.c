@@ -1,12 +1,24 @@
+/**
+ *free_grid -free your soul form sin
+ *
+ *@grid: 2D array pointer
+ *@height: height from main
+ *
+ * Return: freedom
+ */
 #include <stdlib.h>
 void free_grid(int **grid, int height)
 {
+	int h;
+
+	h = height;
+
 	if (grid != NULL)
 	{
-		while (grid[height] >= 0)
+		while (h >= 0)
 		{
-			free(grid[height]);
-			height--;
+			free(grid[h]);
+			h--;
 		}
 
 		free(grid);
