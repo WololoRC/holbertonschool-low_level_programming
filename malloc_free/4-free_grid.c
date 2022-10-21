@@ -1,5 +1,5 @@
 /**
- *free_grid -free your soul form sin
+ *free_grid -free your soul from sin
  *
  *@grid: 2D array pointer
  *@height: height from main
