@@ -9,10 +9,10 @@
 #include <stdlib.h>
 int **alloc_grid(int width, int height)
 {
-	int h;
+	int w;
 	int **arr = NULL;
 
-	h = 0;
+	w = 0;
 
 	if (width == 0 || height == 0)
 	{
@@ -27,23 +27,23 @@ int **alloc_grid(int width, int height)
 		return (NULL);
 	}
 
-	while (h < height)
+	while (w < height)
 	{
-		arr[h] = malloc(sizeof(int) * width);
+		arr[w] = malloc(sizeof(int) * width);
 
-		if (arr[h] == NULL)
+		if (arr[w] == NULL)
 		{
-			while (h >= 0)
+			while (w >= 0)
 			{
-				free(arr[h]);
-				h--;
+				free(arr[w]);
+				w--;
 			}
 
 			free(arr);
 			return (NULL);
 		}
 
-		h++;
+		w++;
 	}
 
 	return (arr);
