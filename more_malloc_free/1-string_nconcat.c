@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include <stdlib.h>
 #include "main.h"
 /**
@@ -38,10 +39,12 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		ptr[cnt] = s1[cnt];
 	}
 
-	for (cnt2 = 0; s2[cnt2] != s2[n]; cnt2++, cnt++)
+	for (cnt2 = 0; cnt2 <= n; cnt2++, cnt++)
 	{
 		ptr[cnt] = s2[cnt2];
 	}
+
+	ptr[cnt - 1] = '\0';
 
 	return (ptr);
 }
