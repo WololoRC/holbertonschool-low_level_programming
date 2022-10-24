@@ -40,14 +40,15 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		ptr[cnt] = s1[cnt];
 	}
 
-	for (cnt2 = 0; cnt2 <= n && s2[cnt2] != '\0'; cnt2++, cnt++)
+	for (cnt2 = 0; cnt2 <= (n - 1) && s2[cnt2] != '\0'; cnt2++)
 	{
 		ptr[cnt] = s2[cnt2];
+		cnt++;
 
 		ptr = realloc(ptr, sizeof(char) * (cnt + cnt2 + 1));
 	}
 
-	ptr[cnt - 1] = '\0';
+	ptr[cnt] = '\0';
 
 	return (ptr);
 }
