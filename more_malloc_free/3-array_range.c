@@ -9,26 +9,37 @@
 int *array_range(int min, int max)
 {
 	int *ptr = NULL;
-	int len;
-
-	if (max < 0)
-	{
-		max = max * -1;
-	}
+	int len, max2, min2;
 
 	if (min > max)
 	{
 		return (NULL);
 	}
 
-	ptr = malloc(sizeof(int) * (max + 4));
+	if (max < 0)
+	{
+		max2 = max * -1;
+		ptr = calloc(max2, sizeof(int));
+	}
+
+	else if (min < 0 && max < 0)
+	{
+		max2 = max * -1;
+		min2 = min * -1;
+		ptr = calloc(min2 + max2, sizeof(int));
+	}
+
+	else
+	{
+		ptr = calloc(max, sizeof(int));
+	}
 
 	if (ptr == NULL)
 	{
 		return (NULL);
 	}
 
-	for (len = 0; min <= max; min++, len++)
+	for (len = 0; min != max; min++, len++)
 	{
 		ptr[len] = min;
 	}
