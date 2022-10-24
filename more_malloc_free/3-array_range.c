@@ -13,6 +13,11 @@ int *array_range(int min, int max)
 
 	cnt = min;
 
+	if (min > max)
+	{
+		return (NULL);
+	}
+
 	while (cnt <= max)
 	{
 		cnt++;
