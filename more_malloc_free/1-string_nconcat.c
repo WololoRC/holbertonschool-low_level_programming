@@ -48,7 +48,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		ptr = realloc(ptr, sizeof(char) * (cnt + cnt2 + 1));
 	}
 
-	ptr[cnt] = '\0';
+	ptr[cnt + cnt2] = '\0';
 
 	return (ptr);
 }
