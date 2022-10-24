@@ -11,19 +11,34 @@ int *array_range(int min, int max)
 	int *ptr;
 	int cnt;
 
-	cnt = min;
-
 	if (min > max)
 	{
 		return (NULL);
 	}
 
-	while (cnt <= max)
+	else if (min < 0 && max < 0)
 	{
-		cnt++;
+		cnt = min * -1;
+		ptr = calloc(cnt - max, sizeof(int));
 	}
 
-	ptr = calloc(cnt, sizeof(int));
+	else if (min < 0 && max > 0)
+	{
+		cnt = min * -1;
+		ptr = calloc(cnt + max, sizeof(int));
+	}
+
+	else
+	{
+		cnt = min;
+
+		while (cnt <= max)
+		{
+			cnt++;
+		}
+
+		ptr = calloc(cnt, sizeof(int));
+	}
 
 	for (cnt = 0; min <= max; cnt++, min++)
 	{
@@ -32,3 +47,4 @@ int *array_range(int min, int max)
 
 	return (ptr);
 }
+
