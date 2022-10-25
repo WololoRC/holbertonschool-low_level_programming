@@ -7,26 +7,12 @@
  */
 void print_array(int *a, int n)
 {
-	int len;
+	int cnt;
 
-	len = 1;
-
-	if ((a[n] == a[0]) && (a[n] == a[-1]) && (a[1] == 98))
+	for (cnt = 0; cnt <= (n - 1); cnt++)
 	{
-		putchar('\0');
+		printf("%d, ", a[cnt]);
 	}
 
-	else
-	{
-		printf("%d", a[0]);
-
-		for (; a[len] < a[n]; len++)
-		{
-			putchar(',');
-			putchar(' ');
-			printf("%d", a[len]);
-		}
-
-		putchar('\n');
-	}
+	printf("%d\n", a[n]);
 }
