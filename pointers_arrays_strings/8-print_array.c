@@ -7,12 +7,21 @@
  */
 void print_array(int *a, int n)
 {
-	int cnt;
+	int cnt, cnt2;
 
-	for (cnt = 0; cnt <= (n - 1); cnt++)
+	cnt = 0;
+
+	while (cnt < n)
 	{
-		printf("%d, ", a[cnt]);
-	}
+		printf("%d", a[cnt]);
+			
+		if (cnt < (n - 1))
+		{
+			printf(", ");
+		}
 
-	printf("%d\n", a[n]);
+		cnt++;
+	}
+	
+	printf("\n");
 }
