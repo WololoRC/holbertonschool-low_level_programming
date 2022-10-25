@@ -25,7 +25,7 @@ int *array_range(int min, int max)
 	else if (min < 0 && max > 0)
 	{
 		cnt = min * -1;
-		ptr = calloc(cnt + max, sizeof(int));
+		ptr = calloc((cnt + max) + 1, sizeof(int));
 	}
 
 	else
