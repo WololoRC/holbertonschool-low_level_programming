@@ -26,17 +26,20 @@ dog_t *new_dog(char *name, float age, char *owner)
 	}
 
 	n_dog->name = _strcpy(n_name, name);
-	
+
 	if (n_dog->name == NULL)
 	{
 		free(n_dog);
+		return (NULL);
 	}
 
 	n_dog->owner = _strcpy(n_owner, owner);
 
 	if (n_dog->owner == NULL)
 	{
+		free(n_dog->name);
 		free(n_dog);
+		return (NULL);
 	}
 
 	n_dog->age = age;
