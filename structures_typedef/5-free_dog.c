@@ -1,4 +1,4 @@
-#include "dog.h"
+#include <stdlib.h>
 /**
  *free_dog -free malloc function argument
  *
