@@ -1,10 +1,11 @@
+#include "dog.h"
 /**
  *free_dog -free malloc function argument
  *
  *@d: dog_t pointer
  * Return: NULL
  */
-void free_dog(dog_t *d);
+void free_dog(dog_t *d)
 {
 	if (d)
 	{
