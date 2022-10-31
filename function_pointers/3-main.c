@@ -1,6 +1,6 @@
 #include <stdlib.h>
 #include <stdio.h>
-#include "calc.h"
+#include "3-calc.h"
 /**
  *main -Entry point
  *
@@ -11,17 +11,21 @@
  */
 int main(int argc, char *argv[3])
 {
+	int a;
+	int b;
+	char *op;
+
 	if (argc < 4 || argc > 4)
 	{
 		printf("Error\n");
 		return (98);
 	}
 
-	int a = atoi(argv[1]);
-	int b = atoi(argv[3]);
-	char *op = argv[2];
+	a = atoi(argv[1]);
+	b = atoi(argv[3]);
+	op = argv[2];
 
-	if (*op == '/' || *op == '%' && (argv[1] == 0 || argv[3] == 0))
+	if (*op == '/' || (*op == '%' && argv[1] == 0) || (argv[3] == 0))
 	{
 		printf("Error\n");
 		return (100);
