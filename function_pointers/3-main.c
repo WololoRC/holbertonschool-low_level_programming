@@ -25,12 +25,6 @@ int main(int argc, char *argv[3])
 	b = atoi(argv[3]);
 	op = argv[2];
 
-	if ((*op == '/' || *op == '%') && (a == 0 || b == 0))
-	{
-		printf("Error\n");
-		return (100);
-	}
-
 	if (*op != '+' && (*op != '-') && (*op != '/') && (*op != '%') && *op != '*')
 	{
 		printf("Error\n");
