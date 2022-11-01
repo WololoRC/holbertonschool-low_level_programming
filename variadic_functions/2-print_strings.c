@@ -27,10 +27,10 @@ void print_strings(char *s, const unsigned int n, ...)
 
 		else
 		{
-			printf("nil");
+			printf("(nil)");
 		}
 
-		if (cnt < (n - 1) && (n))
+		if (cnt < (n - 1) && (s))
 		{
 			printf("%s", s);
 		}
