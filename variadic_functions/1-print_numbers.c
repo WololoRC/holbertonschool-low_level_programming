@@ -21,7 +21,7 @@ void print_numbers(char *s, const unsigned int n, ...)
 		while (cnt < n)
 		{
 			if (s)
-			{	
+			{
 				printf("%s", s);
 			}
 
