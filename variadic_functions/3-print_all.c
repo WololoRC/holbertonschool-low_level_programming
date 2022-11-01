@@ -34,15 +34,7 @@ void print_all(const char * const format, ...)
 				break;
 
 				case 's':
-				if(objs)
-				{
-					printf("%s", va_arg(objs, char *));
-				}
-				
-				else
-				{
-					printf("(nil)");
-				}
+				printf("%s", va_arg(objs, char *));
 				break;
 			}
 
