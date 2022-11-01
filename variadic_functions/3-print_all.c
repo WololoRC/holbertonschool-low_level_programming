@@ -10,34 +10,36 @@ void print_all(const char * const format, ...)
 	int cnt2 = 0;
 	va_list objs;
 
-	va_start(objs, format);
-
-	while (format[cnt2] != '\0')
+	if (format)
 	{
-		switch (format[cnt2])
+		va_start(objs, format);
+
+		while (format[cnt2] != '\0')
 		{
-			case 'c':
+			switch (format[cnt2])
+			{
+				case 'c':
 
-			printf("%c, ", va_arg(objs, int));
-			break;
+				printf("%c, ", va_arg(objs, int));
+				break;
 
-			case 'i':
+				case 'i':
 
-			printf("%d, ", va_arg(objs, int));
-			break;
+				printf("%d, ", va_arg(objs, int));
+				break;
 
-			case 'f':
+				case 'f':
 
-			printf("%fi, ", va_arg(objs, double));
-			break;
+				printf("%fi, ", va_arg(objs, double));
+				break;
 
-			case 's':
-			printf("%s", va_arg(objs, char *));
-			break;
+				case 's':
+				printf("%s", va_arg(objs, char *));
+				break;
+			}
+
+			cnt2++;
 		}
-
-		cnt2++;
 	}
-
 	printf("\n");
 }
