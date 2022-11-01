@@ -8,7 +8,7 @@
  */
 void print_numbers(char *s, const unsigned int n, ...)
 {
-	int cnt = 1;
+	unsigned int cnt = 1;
 
 	if (s && n)
 	{
