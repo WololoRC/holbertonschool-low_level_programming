@@ -5,7 +5,7 @@
  *@head: memory address passed by main.
  *@str: string.
  *
- * Return: New memory address.
+ * Return: New memory address, if malloc fails returns NULL.
  */
 list_t *add_node(list_t **head, const char *str)
 {
@@ -18,6 +18,10 @@ list_t *add_node(list_t **head, const char *str)
 	}
 
 	new = malloc(sizeof(list_t));
+	if (!new)
+	{
+		return (NULL);
+	}
 
 	new->str = strdup(str);
 	new->len = cnt;
