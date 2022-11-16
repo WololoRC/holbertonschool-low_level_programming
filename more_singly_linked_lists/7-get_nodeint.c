@@ -25,7 +25,7 @@ listint_t *get_nodeint_at_index(listint_t *head, unsigned int index)
 	{
 		if (crt_node->next == NULL)
 			return (NULL);
-		
+
 		else
 		{
 			crt_node = crt_node->next;
