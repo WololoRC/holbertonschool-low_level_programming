@@ -10,7 +10,7 @@
 listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 {
 	listint_t *crt_node, *new;
-	unsigned int cnt = 0;
+	unsigned int cnt = 1;
 
 	if (!*head)
 	{
@@ -21,7 +21,7 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 
 	while (crt_node)
 	{
-		if (cnt == (idx - 1))
+		if (cnt >= idx)
 		{
 			new = malloc(sizeof(listint_t));
 			if (!new)
