@@ -37,8 +37,12 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 		}
 
 		if (crt_node->next != NULL)
+		{
 			crt_node = crt_node->next;
-		cnt++;
+			cnt++;
+		}
+		else
+			return (NULL);
 	}
 
 	return (NULL);
