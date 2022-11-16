@@ -10,7 +10,9 @@
 listint_t *get_nodeint_at_index(listint_t *head, unsigned int index)
 {
 	listint_t *crt_node;
-	unsigned int cnt = 1;
+	unsigned int cnt;
+
+	cnt = 1;
 
 	if (!head)
 	{
@@ -21,8 +23,14 @@ listint_t *get_nodeint_at_index(listint_t *head, unsigned int index)
 
 	while (head && cnt <= index)
 	{
-		crt_node = crt_node->next;
-		cnt++;
+		if (crt_node->next == NULL)
+			return (NULL);
+		
+		else
+		{
+			crt_node = crt_node->next;
+			cnt++;
+		}
 	}
 
 	return (crt_node);
