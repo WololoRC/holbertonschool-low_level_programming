@@ -19,16 +19,26 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 
 	crt_node = *head;
 
-	while (crt_node && cnt <= (idx - 2))
+	while (crt_node)
 	{
-		crt_node = crt_node->next;
+		if (cnt == (idx - 1))
+		{
+			new = malloc(sizeof(listint_t));
+			if (!new)
+			{
+				return (NULL);
+			}
+
+			new->n = n;
+			new->next = crt_node->next;
+			crt_node->next = new;
+
+			return (new);
+		}
+
+		if (crt_node->next != NULL)
+			crt_node = crt_node->next;
 		cnt++;
 	}
 
-	new = malloc(sizeof(listint_t));
-	new->n = n;
-	new->next = crt_node->next;
-	crt_node->next = new;
-
-	return (new);
 }
