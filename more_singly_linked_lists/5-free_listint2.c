@@ -6,17 +6,15 @@
  */
 void free_listint2(listint_t **head)
 {
-	listint_t *crt_node, *crt_node2;
-
-	crt_node = *head;
-
-	while (!head)
+	if (!*head)
 	{
-		crt_node2 = crt_node;
-		crt_node = crt_node->next;
+		return;
+	}
 
-		crt_node2->next = NULL;
-		free(crt_node2);
+	while (*head)
+	{
+		free(*head);
+		*head = (*head)->next;
 	}
 
 	*head = NULL;
