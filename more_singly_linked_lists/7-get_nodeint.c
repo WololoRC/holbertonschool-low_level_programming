@@ -10,7 +10,7 @@
 listint_t *get_nodeint_at_index(listint_t *head, unsigned int index)
 {
 	listint_t *crt_node;
-	int cnt = 1;
+	unsigned int cnt = 1;
 
 	if (!head)
 	{
