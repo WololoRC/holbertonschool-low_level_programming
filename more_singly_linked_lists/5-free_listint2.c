@@ -15,6 +15,7 @@ void free_listint2(listint_t **head)
 		crt_node2 = crt_node;
 		crt_node = crt_node->next;
 
+		crt_node2->next = NULL;
 		free(crt_node2);
 	}
 
