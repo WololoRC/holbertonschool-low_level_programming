@@ -11,6 +11,10 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 {
 	listint_t *crt_node, *new;
 	unsigned int cnt = 1;
+	unsigned int check = listint_len(*head);
+
+	if (idx > check)
+		return (NULL);
 
 	crt_node = *head;
 
@@ -25,19 +29,19 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 		*head = new;
 		return (new);
 	}
-
-	for (crt_node; crt_node = crt_node->next ; cnt++)
+	
+	while (cnt <= idx)
 	{
-		if (cnt == (idx - 1))
+		if (cnt == idx)
 		{
 			new->n = n;
 			new->next = crt_node->next;
 			crt_node->next = new;
 		}
+		
+		crt_node = crt_node->next;
+		cnt++;
 	}
-
-	if (idx > cnt)
-		return (NULL);
-
+	
 	return (new);
 }
