@@ -8,12 +8,14 @@
  */
 unsigned int binary_to_uint(const char *b)
 {
-	int bi, cnt;
+	int bi, cnt, hxc, hxc2;
 	unsigned int num;
 
 	if (!b)
 		return (0);
 
+	hxc2 = 0;
+	hxc = 0;
 	num = 0;
 	cnt = 0;
 	bi = 1;
@@ -23,6 +25,7 @@ unsigned int binary_to_uint(const char *b)
 		if ((b[cnt] != '1') && (b[cnt] != '0'))
 			return (0);
 		cnt++;
+		hxc2++;
 	}
 
 	while (cnt >= 0)
@@ -30,11 +33,15 @@ unsigned int binary_to_uint(const char *b)
 		if (b[cnt] == '1')
 		{
 			num += bi;
+			hxc++;
 		}
 
 		bi *= 2;
 		cnt--;
 	}
+
+	if (hxc == hxc2)
+		return (num + 1);
 
 	num /= 2;
 
