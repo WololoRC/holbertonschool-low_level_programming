@@ -28,11 +28,11 @@ ssize_t read_textfile(const char *filename, size_t letters)
 
 	buffer[letters] = '\0';
 
-	wr = write(1, buffer, rd);
+	wr = write(STDOUT_FILENO, buffer, rd);
 	if (wr < rd)
 		return (0);
 
 	close(file);
 	free(buffer);
-	return (rd);
+	return (wr);
 }
