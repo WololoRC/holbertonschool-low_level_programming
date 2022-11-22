@@ -24,13 +24,13 @@ int main(int ac, char **av)
 
 	if (res == 98)
 	{
-		dprinf(STDERR_FILENO, "Error: Can't read from file %s\n", av[1]);
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", av[1]);
 		return (res);
 	}
 
 	if (res == 99)
 	{
-		dprinf(STDERR_FILENO, "Error: Can't write to %s\n", av[2]);
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", av[2]);
 		return (res);
 	}
 
@@ -64,12 +64,16 @@ ssize_t cp(const char *file_from, const char *file_to)
 
 	cl = close(fd1);
 	if (cl < 0)
+	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", cl);
 		return (100);
+	}
 	cl2 = close(fd2);
 	if (cl2 < 0)
+	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", cl2);
 		return (100);
+	}
 
 	return (1);
 }
