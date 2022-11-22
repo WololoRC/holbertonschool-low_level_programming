@@ -55,6 +55,8 @@ ssize_t cp(const char *file_from, const char *file_to)
 		return (98);
 
 	rd = read(fd1, buffer, 1024);
+	if (rd < 0)
+		return (98);
 
 	fd2 = open(file_to, O_CREAT | O_TRUNC | O_RDWR, 0664);
 
