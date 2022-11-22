@@ -10,16 +10,14 @@ int create_file(const char *filename, char *text_content)
 {
 	int fd, wr, cnt;
 
-	cnt = 0;
+	if (!text_content)
+		text_content = "";
 
 	fd = open(filename, O_CREAT | O_TRUNC | O_RDWR, 0600);
 	if (fd < 0)
 		return (-1);
 
-	while (text_content[cnt])
-	{
-		cnt++;
-	}
+	cnt = strlen(text_content);
 
 	wr = write(fd, text_content, cnt);
 	if (wr < -1)
