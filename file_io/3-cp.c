@@ -36,7 +36,7 @@ int main(int ac, char **av)
 
 	if (res == 100)
 	{
-		return (ret);
+		return (res);
 	}
 
 	return (0);
