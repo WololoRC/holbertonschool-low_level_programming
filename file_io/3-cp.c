@@ -24,25 +24,13 @@ int main(int ac, char **av)
 
 	if (res == 98)
 	{
-		ERROR = "Error: Can't read from file NAME_OF_THE_FILE\n";
-		cnt = strlen(ERROR);
-		write(STDERR_FILENO, ERROR, cnt);
+		dprinf(STDERR_FILENO, "Error: Can't read from file %s\n", av[1]);
 		return (res);
 	}
 
 	if (res == 99)
 	{
-		ERROR = "Error: Can't write to NAME_OF_THE_FILE\n";
-		cnt = strlen(ERROR);
-		write(STDERR_FILENO, ERROR, cnt);
-		return (res);
-	}
-
-	if (res == 100)
-	{
-		ERROR = "Error: Can't close fd FD_VALUE\n";
-		cnt = strlen(ERROR);
-		write(STDERR_FILENO, ERROR, cnt);
+		dprinf(STDERR_FILENO, "Error: Can't write to %s\n", av[2]);
 		return (res);
 	}
 
@@ -59,7 +47,7 @@ int main(int ac, char **av)
 ssize_t cp(const char *file_from, const char *file_to)
 {
 	int fd1, fd2, rd, wr;
-	int cl;
+	int cl, cl2;
 	char *buffer[1024];
 
 	fd1 = open(file_from, O_RDONLY);
@@ -76,9 +64,11 @@ ssize_t cp(const char *file_from, const char *file_to)
 
 	cl = close(fd1);
 	if (cl < 0)
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", cl);
 		return (100);
-	cl = close(fd2);
-	if (cl < 0)
+	cl2 = close(fd2);
+	if (cl2 < 0)
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", cl2);
 		return (100);
 
 	return (1);
