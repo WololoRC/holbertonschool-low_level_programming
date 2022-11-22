@@ -12,7 +12,7 @@ int main(int ac, char **av)
 	int res, cnt;
 	char *ERROR;
 
-	if (ac >= 4 || ac < 3)
+	if (ac != 3)
 	{
 		ERROR = "Usage: cp file_from file_to\n";
 		cnt = strlen(ERROR);
