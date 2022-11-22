@@ -63,13 +63,13 @@ ssize_t cp(const char *file_from, const char *file_to)
 		return (99);
 
 	cl = close(fd1);
-	if (cl < 0)
+	if (cl == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", cl);
 		return (100);
 	}
 	cl2 = close(fd2);
-	if (cl2 < 0)
+	if (cl2 == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", cl2);
 		return (100);
