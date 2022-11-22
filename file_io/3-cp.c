@@ -55,19 +55,24 @@ ssize_t cp(const char *file_from, const char *file_to)
 	int cl, cl2;
 	char *buffer[1024];
 
+	rd = 1;
+
 	fd1 = open(file_from, O_RDONLY);
 	if (fd1 < 0)
 		return (98);
 
-	rd = read(fd1, buffer, 1024);
-	if (rd < 0)
-		return (98);
+	fd2 = open(file_to, O_CREAT | O_TRUNC | O_WRONLY, 0664);
 
-	fd2 = open(file_to, O_CREAT | O_TRUNC | O_RDWR, 0664);
+	while (rd != 0)
+	{
+		rd = read(fd1, buffer, 1024);
+		if (rd < 0)
+			return (98);
 
-	wr = write(fd2, buffer, rd);
-	if (wr < rd)
-		return (99);
+		wr = write(fd2, buffer, rd);
+		if (wr < 0)
+			return (99);
+	}
 
 	cl = close(fd1);
 	if (cl == -1)
@@ -75,6 +80,7 @@ ssize_t cp(const char *file_from, const char *file_to)
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", cl);
 		return (100);
 	}
+
 	cl2 = close(fd2);
 	if (cl2 == -1)
 	{
