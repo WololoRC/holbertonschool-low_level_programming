@@ -34,6 +34,11 @@ int main(int ac, char **av)
 		return (res);
 	}
 
+	if (res == 100)
+	{
+		return (ret);
+	}
+
 	return (0);
 }
 /**
