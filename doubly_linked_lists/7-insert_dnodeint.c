@@ -36,11 +36,10 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 		if (cnt == idx)
 		{
 			new->n = n;
-			new->prev = crt_node;
 			new->next = crt_node->next;
 			crt_node->next = new;
+			new->prev = crt_node;
 			new->next->prev = new;
-			return (new);
 		}
 
 		crt_node = crt_node->next;
