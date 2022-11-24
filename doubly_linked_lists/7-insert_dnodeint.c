@@ -41,15 +41,15 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
  */
 size_t dlistint_len(const dlistint_t *h)
 {
-        unsigned int cnt = 0;
+	unsigned int cnt = 0;
 
-        while (h)
-        {
-                cnt++;
-                h = h->next;
-        }
+	while (h)
+	{
+		cnt++;
+		h = h->next;
+	}
 
-        return (cnt);
+	return (cnt);
 }
 #include "lists.h"
 /**
@@ -61,19 +61,18 @@ size_t dlistint_len(const dlistint_t *h)
  */
 dlistint_t *get_dnodeint_at_index(dlistint_t *head, unsigned int index)
 {
-        unsigned int cnt = 0;
+unsigned int cnt = 0;
 
-        while (cnt < index)
-        {
-                head = head->next;
-                if (!head)
-                {
-                        return (NULL);
-                }
-                cnt++;
-        }
+	while (cnt < index)
+	{
+		head = head->next;
 
-        return (head);
+		if (!head)
+		{
+			return (NULL);
+		}
+		cnt++;
+	}
+
+	return (head);
 }
-
-
