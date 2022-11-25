@@ -9,11 +9,13 @@
  */
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
-	unsigned long int index = key_index(key, ht->size);
+	unsigned long int index = 0;
 	hash_node_t *new = NULL;
 
 	if (!ht)
 		return (0);
+
+	index = key_index(key, ht->size);
 
 	new = add_node(&new, (const char *) key, (const char *) value);
 	if (!new)
@@ -26,7 +28,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	}
 
 	ht->array[index] = new;
-	
+
 	return (1);
 }
 /**
