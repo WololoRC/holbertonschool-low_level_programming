@@ -34,8 +34,9 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 
 	last = ht->array[index];
 
-	if (last->key == key)
+	if ((last->key = new->key))
 	{
+		free(new);
 		last->value = strdup(value);
 		return (1);
 	}
