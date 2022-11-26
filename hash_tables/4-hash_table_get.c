@@ -17,8 +17,15 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
 	index = key_index(key, ht->size);
 	crt_n = ht->array[index];
 
-	if (!crt_n)
-		return (NULL);
 
-	return (crt_n->value);
+	while (crt_n)
+	{
+		if (strcmp(crt_n->key, key) == 0)
+		{
+			return (crt_n->value);
+		}
+		crt_n = crt_n->next;
+	}
+
+	return (NULL);
 }
