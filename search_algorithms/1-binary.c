@@ -5,7 +5,7 @@
  *@array: array
  *@size: array size
  *@value: searched value
- * Return: index on success, -1 if fails
+ * Return: index on success, -1 if fails.
  */
 int binary_search(int *array, size_t size, int value)
 {
@@ -39,11 +39,17 @@ int binary_search(int *array, size_t size, int value)
 
 	return (-1);
 }
+/**
+ * print_cut - print the the array cuted by binary search
+ *@array: array
+ *@l: left
+ *@r: right.
+ */
 void print_cut(int *array, int l, int r)
 {
 	printf("Searching in array: ");
 
-	printf("%d",array[l]);
+	printf("%d", array[l]);
 	l++;
 
 	while (l <= r)
